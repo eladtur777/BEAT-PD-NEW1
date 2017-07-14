@@ -4,6 +4,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
 import javax.persistence.Query;
@@ -21,7 +22,8 @@ import static java.lang.String.format;
 public class ModelGenerics{
 
     private static ModelGenerics modelGenericsInstance;
-    private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+   // private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    private SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 
     public static ModelGenerics getModelGenericsInstance(){
         if(modelGenericsInstance == null)
