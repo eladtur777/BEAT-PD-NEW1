@@ -22,8 +22,8 @@ import static java.lang.String.format;
 public class ModelGenerics{
 
     private static ModelGenerics modelGenericsInstance;
-   // private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-    private SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+  //  private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+    private SessionFactory sessionFactory = new AnnotationConfiguration().configure("hibernate.cfg.xml").buildSessionFactory();
 
     public static ModelGenerics getModelGenericsInstance(){
         if(modelGenericsInstance == null)
